@@ -1,0 +1,58 @@
+
+> basepay@0.1.0 build /Users/meta.mansa/swe/full-stack-web3/basePay-ui/basepay
+> next build --webpack
+
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+ ⚠ Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of /Users/meta.mansa/pnpm-lock.yaml as the root directory.
+ To silence this warning, set `outputFileTracingRoot` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/output#caveats for more information.
+ Detected additional lockfiles: 
+   * /Users/meta.mansa/swe/full-stack-web3/basePay-ui/basepay/pnpm-lock.yaml
+
+   ▲ Next.js 16.0.3 (webpack)
+   - Environments: .env.local
+
+   Creating an optimized production build ...
+Failed to compile.
+
+./node_modules/.pnpm/@wagmi+connectors@7.0.0_97b70e2dc5cfe356eb54395652ec82d8/node_modules/@wagmi/connectors/dist/esm/coinbaseWallet.js
+Module not found: Can't resolve '@coinbase/wallet-sdk'
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./node_modules/.pnpm/@wagmi+connectors@7.0.0_97b70e2dc5cfe356eb54395652ec82d8/node_modules/@wagmi/connectors/dist/esm/exports/index.js
+./node_modules/.pnpm/wagmi@3.0.0_@base-org+account@2.4.0_@types+react@19.2.6_bufferutil@4.0.9_fastestsmalles_f3c7b9317fc0b20e2df23ab542f757a7/node_modules/wagmi/dist/esm/exports/connectors.js
+./node_modules/.pnpm/@rainbow-me+rainbowkit@2.2.9_1a7fe46b192da02f29f4df6279e66e7b/node_modules/@rainbow-me/rainbowkit/dist/index.js
+./app/providers.tsx
+
+./node_modules/.pnpm/@wagmi+connectors@7.0.0_97b70e2dc5cfe356eb54395652ec82d8/node_modules/@wagmi/connectors/dist/esm/gemini.js
+Module not found: Can't resolve '@gemini-wallet/core'
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./node_modules/.pnpm/@wagmi+connectors@7.0.0_97b70e2dc5cfe356eb54395652ec82d8/node_modules/@wagmi/connectors/dist/esm/exports/index.js
+./node_modules/.pnpm/wagmi@3.0.0_@base-org+account@2.4.0_@types+react@19.2.6_bufferutil@4.0.9_fastestsmalles_f3c7b9317fc0b20e2df23ab542f757a7/node_modules/wagmi/dist/esm/exports/connectors.js
+./node_modules/.pnpm/@rainbow-me+rainbowkit@2.2.9_1a7fe46b192da02f29f4df6279e66e7b/node_modules/@rainbow-me/rainbowkit/dist/index.js
+./app/providers.tsx
+
+./node_modules/.pnpm/@wagmi+connectors@7.0.0_97b70e2dc5cfe356eb54395652ec82d8/node_modules/@wagmi/connectors/dist/esm/porto.js
+Module not found: Can't resolve 'porto'
+Did you mean './porto'?
+Requests that should resolve in the current directory need to start with './'.
+Requests that start with a name are treated as module requests and resolve within module directories (node_modules, /Users/meta.mansa/swe/full-stack-web3/basePay-ui/basepay/node_modules/.pnpm/next@16.0.3_@babel+core@7.28.5_react-dom@19.2.0_react@19.2.0__react@19.2.0/node_modules/next/dist/bin/node_modules, /Users/meta.mansa/swe/full-stack-web3/basePay-ui/basepay/node_modules/.pnpm/next@16.0.3_@babel+core@7.28.5_react-dom@19.2.0_react@19.2.0__react@19.2.0/node_modules/next/dist/node_modules, /Users/meta.mansa/swe/full-stack-web3/basePay-ui/basepay/node_modules/.pnpm/next@16.0.3_@babel+core@7.28.5_react-dom@19.2.0_react@19.2.0__react@19.2.0/node_modules/next/node_modules, /Users/meta.mansa/swe/full-stack-web3/basePay-ui/basepay/node_modules/.pnpm/next@16.0.3_@babel+core@7.28.5_react-dom@19.2.0_react@19.2.0__react@19.2.0/node_modules, /Users/meta.mansa/swe/full-stack-web3/basePay-ui/basepay/node_modules/.pnpm/node_modules).
+If changing the source code is not an option there is also a resolve options called 'preferRelative' which tries to resolve these kind of requests in the current directory too.
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./node_modules/.pnpm/@wagmi+connectors@7.0.0_97b70e2dc5cfe356eb54395652ec82d8/node_modules/@wagmi/connectors/dist/esm/exports/index.js
+./node_modules/.pnpm/wagmi@3.0.0_@base-org+account@2.4.0_@types+react@19.2.6_bufferutil@4.0.9_fastestsmalles_f3c7b9317fc0b20e2df23ab542f757a7/node_modules/wagmi/dist/esm/exports/connectors.js
+./node_modules/.pnpm/@rainbow-me+rainbowkit@2.2.9_1a7fe46b192da02f29f4df6279e66e7b/node_modules/@rainbow-me/rainbowkit/dist/index.js
+./app/providers.tsx
+
+
+> Build failed because of webpack errors
+ ELIFECYCLE  Command failed with exit code 1.

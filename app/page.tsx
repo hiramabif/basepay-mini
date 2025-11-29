@@ -1,3 +1,5 @@
+"use client";
+
 import { Header } from "./components/Header"; // COMPONENT: Top navigation bar.
 import { PaymentForm } from "./components/PaymentForm"; // COMPONENT: Main application logic.
 

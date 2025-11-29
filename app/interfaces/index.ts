@@ -1,3 +1,5 @@
+"use client";
+
 /**
  * Represents a recipient in the payment form.
  * Used to track the address and amount for each recipient in the list.

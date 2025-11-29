@@ -120,7 +120,7 @@ export function PaymentForm() {
                     {!isConnected ? (
                         <div className="w-full flex justify-center">
                             <ConnectButton.Custom>
-                                {({ openConnectModal }) => (
+                                {({ openConnectModal }: { openConnectModal: () => void }) => (
                                     <button
                                         onClick={openConnectModal}
                                         className="w-1/2 py-4 rounded-2xl font-bold text-lg bg-[#0052FF] text-white hover:brightness-110 transition-all shadow-lg"

@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useMemo, useEffect } from "react";
 import { useAccount, useChainId, useReadContract, useWriteContract, useWaitForTransactionReceipt, usePublicClient, useConfig } from "wagmi";
 import { readContract, waitForTransactionReceipt } from "@wagmi/core";
