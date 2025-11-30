@@ -28,7 +28,7 @@ export type Token = {
  */
 export interface ContractsConfig {
     [chainId: number]: {
-        tsender: string
+        tsender: string | null
         no_check: string | null
     }
 }
