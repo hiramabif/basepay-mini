@@ -1,23 +1,91 @@
-What we are trying to do here is create a simple pay dApp that allows a user to send payment (in any erc20 token) to multiple other users in a single transaction. This is useful for payroll, airdrops, or any other situation where you need to send the different amounts of tokens to multiple recipients.
+# BasePay Mini 🔵
 
-- User connects their wallet (connect wallet button using rainbowkit) ✅
-- User selects an ERC20 token to pay with(there is a dropdown that fetches all the erc20 tokens the user has in their wallet):✅
-    - Drop down list.✅
-    - Token symbol and logo shown in the dropdown list.✅
-- User inputs a list of recipient addresses and the amount to send to each address (there are multiple input areas where the user can add more recipients. the amount input area is beside each recipient input area)✅
-- User clicks "Pay" button✅
+> The coolest, most efficient way to send crypto on Base. Built for the Superchain.
 
-Quality of Life Features:
-- Validate recipient addresses and amounts before allowing the user to submit the transaction✅
-- Show estimated gas fees before submitting the transaction
-- Show transaction status (pending, success, failure) after submission✅
-- Create a small toggle button to switch between light and dark mode for better user experience✅
-- Responsive design to ensure usability on both desktop and mobile devices✅
-- Have a toggle button to switch between paying in ETH or ERC20 tokens✅
-- Have a search bar in the header to search for specific ERC20 tokens when selecting the token to pay with
+## Use Case
+BasePay Mini is designed for **bulk token distribution**. Whether you're a DAO contributor paying out grants, a friend splitting a dinner bill among 10 people, or an airdrop organizer, BasePay Mini lets you send ERC-20 tokens or ETH to multiple recipients in a **single transaction**.
 
-Needs To Be Fixed:
-- Logo should be the Base logo at both the top righ hand corner and the metadata (I will provide the svg in the assets folder)
-- Both connect buttons should follow the base colour code which is rgba(0,0,255,1) - this should apply to chain and account displays
-- Replace the "Hyper-Optimized Payments Text" with "BasePay " " [Logo]". The colour of this should be rgba(0,0,255,1)
-- Bottom connect button should return to previous state after 10 seconds aftertransaction is completed (or failed).
+## Stack
+Built with the bleeding edge of Web3 and frontend tech:
+-   **Framework**: [Next.js 16](https://nextjs.org/) (App Router)
+-   **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
+-   **Blockchain Interaction**: [Wagmi v3](https://wagmi.sh/) & [Viem](https://viem.sh/)
+-   **Wallet Connection**: [RainbowKit](https://www.rainbowkit.com/) & [AppKit](https://reown.com/)
+-   **Social Integration**: [Farcaster Miniapp SDK](https://docs.farcaster.xyz/)
+
+## 💡 The Problem
+Sending crypto to multiple people usually sucks:
+1.  **Tedious**: You have to copy-paste addresses and sign a transaction for *each* person.
+2.  **Expensive**: You pay base gas fees for every single transfer.
+3.  **Slow**: Waiting for 10 confirmations is boring.
+
+**BasePay Mini fixes this.**
+-   **Batching**: We use a smart contract (`TSender`) to bundle all transfers into one on-chain transaction.
+-   **Gas Savings**: One transaction = One gas fee (plus a tiny bit for the calldata).
+-   **Speed**: Done in seconds.
+
+## ✨ Why It's The Coolest Thing Ever
+-   **Farcaster Native**: Designed to work seamlessly as a Farcaster Miniapp.
+-   **Zero Clutter**: A "Glassmorphism" UI that looks premium and feels native to Base.
+-   **Smart Validation**: Automatically checks balances and allowances before you even click "Pay".
+-   **Auto-Reset**: The UI knows when you're done and resets itself, ready for the next batch.
+
+## 📖 Getting Started
+
+### Prerequisites
+-   Node.js & pnpm
+-   A wallet (Coinbase Wallet, MetaMask, etc.)
+
+### Installation
+```bash
+git clone https://github.com/yourusername/basepay-mini.git
+cd basepay-mini
+pnpm install
+```
+
+### Run Locally
+```bash
+pnpm dev
+```
+Open [http://localhost:3000](http://localhost:3000) with your browser.
+
+## 💻 Code Walkthrough
+
+### The Core Logic: `usePaymentForm.ts`
+The magic happens in our custom hook. It handles the complex "Approve -> Send" flow automatically.
+
+```typescript
+// 1. We check if the contract is allowed to spend your tokens
+const approvedAmount = await getAllowance(tSenderAddress);
+
+if (approvedAmount < totalAmountWei) {
+    // 2. If not, we ask for approval first
+    const approvalHash = await writeContractAsync({
+        functionName: "approve",
+        args: [tSenderAddress, maxUint256]
+    });
+    await waitForTransactionReceipt({ hash: approvalHash });
+}
+
+// 3. Then we fire the batch transaction
+await writeContractAsync({
+    functionName: "airdropERC20",
+    args: [token, recipients, amounts, total]
+});
+```
+
+### The UI: `PaymentForm.tsx`
+We keep the UI clean by separating logic. The form listens to the transaction state (`isSigning`, `isProcessing`, `isConfirmed`) to give real-time feedback.
+
+```tsx
+<button disabled={isTxLoading}>
+    {isTxLoading ? "Processing..." : isConfirmed ? "Sent!" : "Pay"}
+</button>
+```
+
+## 🌐 Live Demo
+Check it out live on Vercel:
+[**https://basepay-mini.vercel.app**](https://basepay-mini.vercel.app)
+
+---
+Built with 💙 on Base.
