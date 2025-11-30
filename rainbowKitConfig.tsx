@@ -7,7 +7,8 @@ import {
     optimism,
     arbitrum,
     base,
-    sepolia
+    sepolia,
+    monad
 } from 'wagmi/chains';
 
 const basepayId = process.env.NEXT_PUBLIC_BASE_PAY_ID
@@ -20,7 +21,7 @@ if (!basepayId) {
 const config = getDefaultConfig({
     appName: 'My RainbowKit App',
     projectId: basepayId!,
-    chains: [mainnet, polygon, optimism, arbitrum, base, sepolia],
+    chains: [mainnet, polygon, optimism, arbitrum, base, sepolia, monad],
     ssr: false, // If your dApp uses server side rendering (SSR)
 });
 
