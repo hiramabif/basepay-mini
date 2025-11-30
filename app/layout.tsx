@@ -23,6 +23,22 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "BasePay",
   description: "Hyper gas-optimized bulk ERC20 token transfer",
+  other: {
+    "fc:miniapp": JSON.stringify({
+      version: "next",
+      imageUrl: "https://basepay.vercel.app/api/og", // Placeholder, needs real URL
+      button: {
+        title: "Launch BasePay",
+        action: {
+          type: "launch_miniapp",
+          name: "BasePay",
+          url: "https://basepay.vercel.app", // Placeholder, needs real URL
+          splashImageUrl: "https://basepay.vercel.app/splash.png", // Placeholder
+          splashBackgroundColor: "#0052FF",
+        },
+      },
+    }),
+  },
 }
 
 export default function RootLayout(props: { children: ReactNode }) {

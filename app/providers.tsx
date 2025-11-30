@@ -9,6 +9,7 @@ import { WagmiProvider } from 'wagmi';
 import { darkTheme, lightTheme, RainbowKitProvider } from '@rainbow-me/rainbowkit';
 import config from '@/rainbowKitConfig';
 import { useEffect, useState } from "react";
+import { sdk } from "@farcaster/miniapp-sdk";
 
 import '@rainbow-me/rainbowkit/styles.css';
 
@@ -16,7 +17,10 @@ const queryClient = new QueryClient();
 
 export function Providers(props: { children: React.ReactNode }) {
     const [mounted, setMounted] = useState(false);
-    useEffect(() => setMounted(true), []);
+    useEffect(() => {
+        setMounted(true);
+        sdk.actions.ready();
+    }, []);
     if (!mounted) {
         return null; // Don't render anything on the server or until mounted
     }
