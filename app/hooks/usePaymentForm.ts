@@ -7,7 +7,7 @@ import { parseUnits, erc20Abi, isAddress, maxUint256 } from "viem";
 import { DEFAULT_TOKENS } from "../components/TokenSelector";
 import { chainsToTSender, tsenderAbi } from "../constants";
 import { Recipient, Token } from "../interfaces";
-import { BRIDGE_ADDRESS, bridgeAbi, DEST_CHAIN_ID_BASE } from "../utils/bridge";
+
 
 
 export function usePaymentForm() {
@@ -19,8 +19,7 @@ export function usePaymentForm() {
         { id: "1", address: "", amount: "" },
     ]);
 
-    // State for Bridge Mode
-    const [isBridgeMode, setIsBridgeMode] = useState(false);
+
 
     // Wagmi hooks
     const account = useAccount();
@@ -105,62 +104,12 @@ export function usePaymentForm() {
                 return;
             }
 
-            // --- BRIDGE MODE (Monad -> Base) ---
-            if (isBridgeMode && chainId === 143) {
-                if (recipients.length > 1) {
-                    alert("Bridging only supports one recipient at a time.");
-                    return;
-                }
-                const recipient = recipients[0];
-                const amountWei = amounts[0];
-
-                // 1. Approve Bridge
-                const approvedAmount = await getAllowance(BRIDGE_ADDRESS);
-                if (approvedAmount < amountWei) {
-                    const approvalHash = await writeContractAsync({
-                        abi: erc20Abi,
-                        address: selectedToken.address as `0x${string}`,
-                        functionName: "approve",
-                        args: [BRIDGE_ADDRESS as `0x${string}`, maxUint256]
-                    });
-                    await waitForTransactionReceipt(config, { hash: approvalHash });
-                }
-
-                // 2. Lock / Bridge
-                await writeContractAsync({
-                    address: BRIDGE_ADDRESS as `0x${string}`,
-                    abi: bridgeAbi,
-                    functionName: "lock",
-                    args: [
-                        selectedToken.address as `0x${string}`,
-                        amountWei,
-                        BigInt(DEST_CHAIN_ID_BASE),
-                        recipient.address as `0x${string}`
-                    ]
-                });
-                return;
-            }
-
-            // --- STANDARD / BATCH MODE ---
-
-            // If tSender is missing (e.g. Monad without Bridge Mode), fallback to standard transfer
             if (!tSenderAddress) {
-                if (recipients.length > 1) {
-                    alert("Batch payments are not supported on this chain yet. Use single transfer.");
-                    return;
-                }
-                // Single Transfer Fallback
-                const recipient = recipients[0];
-                const amountWei = amounts[0];
-
-                await writeContractAsync({
-                    abi: erc20Abi,
-                    address: selectedToken.address as `0x${string}`,
-                    functionName: "transfer",
-                    args: [recipient.address as `0x${string}`, amountWei]
-                });
+                alert("This chain is not supported yet.");
                 return;
             }
+
+
 
             // 2. Check Approvals
             const approvedAmount = await getAllowance(tSenderAddress);
@@ -238,7 +187,6 @@ export function usePaymentForm() {
         submissionError,
         receiptError,
         resetTxStatus,
-        isBridgeMode,
-        setIsBridgeMode,
+
     };
 };

@@ -10,19 +10,6 @@ import {
     sepolia,
 } from 'wagmi/chains';
 
-const monad = {
-    id: 143,
-    name: 'Monad',
-    nativeCurrency: { name: 'Monad', symbol: 'MON', decimals: 18 },
-    rpcUrls: {
-        default: { http: ['https://rpc.monad.xyz'] }, // Assuming this, will need to verify or use user provided if any. User didn't provide RPC, I will use a placeholder or try to find one.
-        public: { http: ['https://rpc.monad.xyz'] },
-    },
-    blockExplorers: {
-        default: { name: 'Monad Explorer', url: 'https://explorer.monad.xyz' },
-    },
-} as const;
-
 const basepayId = process.env.NEXT_PUBLIC_BASE_PAY_ID
 
 // Basic error handling for missing Project ID
@@ -33,7 +20,7 @@ if (!basepayId) {
 const config = getDefaultConfig({
     appName: 'My RainbowKit App',
     projectId: basepayId!,
-    chains: [mainnet, polygon, optimism, arbitrum, base, sepolia, monad],
+    chains: [mainnet, polygon, optimism, arbitrum, base, sepolia],
     ssr: false, // If your dApp uses server side rendering (SSR)
 });
 

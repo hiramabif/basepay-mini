@@ -32,8 +32,7 @@ export function PaymentForm() {
         submissionError: error,
         receiptError: isError,
         resetTxStatus,
-        isBridgeMode,
-        setIsBridgeMode,
+
     } = usePaymentForm();
 
     useEffect(() => {
@@ -119,21 +118,7 @@ export function PaymentForm() {
                     </div>
                 </div>
 
-                {/* BRIDGE TOGGLE (Monad Only) */}
-                {chainId === 143 && (
-                    <div className="flex items-center justify-between px-2">
-                        <label className="text-sm font-bold text-foreground flex items-center gap-2 cursor-pointer">
-                            <input
-                                type="checkbox"
-                                checked={isBridgeMode}
-                                onChange={(e) => setIsBridgeMode(e.target.checked)}
-                                className="w-4 h-4 rounded border-gray-300 text-primary focus:ring-primary"
-                            />
-                            Bridge to Base
-                        </label>
-                        <span className="text-xs text-muted-foreground">via Lock/Mint</span>
-                    </div>
-                )}
+
 
                 <div className="shrink-0 pt-2">
                     {!isConnected ? (
