@@ -8,7 +8,7 @@ function withValidProperties(properties: Record<string, undefined | string | str
 }
 
 export async function GET() {
-    const appUrl = process.env.NEXT_PUBLIC_URL || "https://basepay.vercel.app";
+    const appUrl = process.env.NEXT_PUBLIC_URL || "https://basepay-mini.vercel.app";
 
     // 2. Define the Manifest
     const manifest = {
@@ -28,7 +28,7 @@ export async function GET() {
             name: "BasePay",
             homeUrl: appUrl,
             iconUrl: `${appUrl}/icon.png`,
-            splashImageUrl: `${appUrl}/splash.png`,
+            splashImageUrl: `${appUrl}/icon.svg`,
             splashBackgroundColor: "#0052FF",
             webhookUrl: `${appUrl}/api/webhook`,
             subtitle: "Fast, Secure, 0 Fees",
