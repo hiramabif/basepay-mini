@@ -31,7 +31,7 @@ export async function GET() {
             splashImageUrl: `${appUrl}/splash.png`,
             splashBackgroundColor: "#0052FF",
             webhookUrl: `${appUrl}/api/webhook`,
-            subtitle: "Bulk Transfers x Fees",
+            subtitle: "Fast, Secure, 0 Fess",
             description: "Send tokens to multiple recipients in a single transaction.",
             screenshotUrls: [
                 `${appUrl}/screenshot1.png`,
@@ -44,7 +44,7 @@ export async function GET() {
             ogTitle: "BasePay - Bulk Token Sender",
             ogDescription: "Hyper gas-optimized bulk ERC20 token transfer on Base.",
             ogImageUrl: `${appUrl}/og-image.png`,
-            noindex: "true", // Note: Strings are safer for clean JSON output
+            noindex: true, // Note: Strings are safer for clean JSON output
         }),
     };
 
