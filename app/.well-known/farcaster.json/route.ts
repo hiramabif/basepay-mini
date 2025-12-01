@@ -31,7 +31,7 @@ export async function GET() {
             splashImageUrl: `${appUrl}/splash.png`,
             splashBackgroundColor: "#0052FF",
             webhookUrl: `${appUrl}/api/webhook`,
-            subtitle: "Fast, Secure, 0 Fess",
+            subtitle: "Fast, Secure, 0 Fees",
             description: "Send tokens to multiple recipients in a single transaction.",
             screenshotUrls: [
                 `${appUrl}/screenshot1.png`,
