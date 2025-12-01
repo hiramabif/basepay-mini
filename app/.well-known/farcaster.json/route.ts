@@ -14,11 +14,11 @@ export async function GET() {
     const manifest = {
         // Leave accountAssociation empty for the FIRST deploy to generate keys
         // Once generated, paste them here and redeploy.
-        accountAssociation: withValidProperties({
+        "accountAssociation": {
             "header": "eyJmaWQiOjE1MzYyNzUsInR5cGUiOiJjdXN0b2R5Iiwia2V5IjoiMHgyYzdFQzAxOUVEOTk1OTFENGY2QTkwOUIyRmJENTM2RTIyOTUyQzJCIn0",
             "payload": "eyJkb21haW4iOiJiYXNlcGF5LW1pbmkudmVyY2VsLmFwcCJ9",
             "signature": "QLAlbMhXYHsXYODKzRFdyzzeSr6rc5XuZkvKejEi86UoM1JPc2NZgx+B3y0ST+mTbq8PysNto2OAVHiGWrtqSRw="
-        }),
+        },
 
         baseBuilder: withValidProperties({
             ownerAddress: "0x30B25D38a488370bE4E568A260bFeA636459E37A",
