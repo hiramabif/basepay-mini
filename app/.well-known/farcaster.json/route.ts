@@ -31,7 +31,7 @@ export async function GET() {
             splashImageUrl: `${appUrl}/splash.png`,
             splashBackgroundColor: "#0052FF",
             webhookUrl: `${appUrl}/api/webhook`,
-            subtitle: "Hyper gas-optimized bulk ERC20 token transfer",
+            subtitle: "Bulk Transfers x Fees",
             description: "Send tokens to multiple recipients in a single transaction.",
             screenshotUrls: [
                 `${appUrl}/screenshot1.png`,
