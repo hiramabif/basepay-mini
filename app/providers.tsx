@@ -21,9 +21,7 @@ export function Providers(props: { children: React.ReactNode }) {
         setMounted(true);
         sdk.actions.ready();
     }, []);
-    if (!mounted) {
-        return null; // Don't render anything on the server or until mounted
-    }
+
     return (
         <WagmiProvider config={config}>
             <QueryClientProvider client={queryClient}>
