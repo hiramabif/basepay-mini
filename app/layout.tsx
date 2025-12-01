@@ -10,6 +10,7 @@ import type { Metadata } from "next" // TYPE: For SEO metadata.
 import { Inter } from "next/font/google" // FONT: Optimized Google Font loader.
 import { type ReactNode } from "react"
 import { Providers } from "./providers" // COMPONENT: Wraps app in context providers (Wagmi, RainbowKit).
+import { SDKInitializer } from "./SDKInitialiser"
 
 // FONT CONFIG: Load the Inter font with 'latin' subset.
 // 'variable' allows us to use it as a CSS variable (--font-inter).
@@ -42,6 +43,8 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout(props: { children: ReactNode }) {
+
+
   return (
     // HTML: 
     // - lang="en": Accessibility best practice.
@@ -62,6 +65,7 @@ export default function RootLayout(props: { children: ReactNode }) {
           Wraps the app with WagmiConfig and RainbowKitProvider to enable 
           wallet connection and blockchain interactions throughout the app.
         */}
+        <SDKInitializer />
         <Providers>
           {props.children}
         </Providers>

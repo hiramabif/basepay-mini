@@ -16,9 +16,7 @@ import '@rainbow-me/rainbowkit/styles.css';
 const queryClient = new QueryClient();
 
 export function Providers(props: { children: React.ReactNode }) {
-    useEffect(() => {
-        sdk.actions.ready();
-    }, [])
+
 
     return (
         <WagmiProvider config={config}>
