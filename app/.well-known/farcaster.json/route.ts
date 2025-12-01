@@ -1,14 +1,15 @@
+// app/.well-known/farcaster.json/route.ts
+
 export async function GET() {
-    const appUrl = process.env.NEXT_PUBLIC_URL || "https://basepay.vercel.app"; // Fallback to a placeholder
+    const appUrl = process.env.NEXT_PUBLIC_URL || "https://basepay.vercel.app";
 
     const manifest = {
-        "accountAssociation": {
-            "header": "",
-            "payload": "",
-            "signature": ""
-        },
+        // 1. TEMPORARILY REMOVE accountAssociation
+        // We will add this back in Phase 3 after the Base tool generates it for us.
+
         "baseBuilder": {
-            "ownerAddress": "0x30B25D38a488370bE4E568A260bFeA636459E37A" // TODO: Add your Base Account address here
+            // Make sure this is your correct Base/Coinbase Smart Wallet address
+            "ownerAddress": "0x30B25D38a488370bE4E568A260bFeA636459E37A"
         },
         "miniapp": {
             "version": "1",
@@ -19,7 +20,7 @@ export async function GET() {
             "splashBackgroundColor": "#0052FF",
             "webhookUrl": `${appUrl}/api/webhook`,
             "subtitle": "Hyper gas-optimized bulk ERC20 token transfer",
-            "description": "Send tokens to multiple recipients in a single transaction with BasePay.",
+            "description": "Send tokens to multiple recipients in a single transaction.",
             "screenshotUrls": [
                 `${appUrl}/screenshot1.png`,
                 `${appUrl}/screenshot2.png`
@@ -35,5 +36,13 @@ export async function GET() {
         }
     };
 
-    return Response.json(manifest);
+    return Response.json(manifest, {
+        status: 200,
+        headers: {
+            // 2. CRITICAL: Add CORS headers so the Base Validator can read this file
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "GET",
+            "Access-Control-Allow-Headers": "Content-Type, Authorization",
+        },
+    });
 }
