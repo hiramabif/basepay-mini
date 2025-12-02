@@ -1,6 +1,6 @@
 
 
-import { ContractsConfig } from "./interfaces";
+import { ContractsConfig } from "../interfaces";
 
 export const chainsToTSender: ContractsConfig = {
     324: {

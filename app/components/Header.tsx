@@ -56,7 +56,7 @@ export function Header() {
                 {/* LOGO SECTION */}
                 <div className="flex items-center">
                     <img
-                        src="/assets/base-logo-new.svg"
+                        src="/assets/Base_basemark_blue.png"
                         alt="BasePay"
                         className="h-12 w-auto object-contain"
                     />

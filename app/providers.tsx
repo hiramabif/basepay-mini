@@ -8,8 +8,8 @@ import {
 import { WagmiProvider } from 'wagmi';
 import { darkTheme, lightTheme, RainbowKitProvider } from '@rainbow-me/rainbowkit';
 import config from '@/rainbowKitConfig';
-import { useEffect, useState } from "react";
-import { sdk } from "@farcaster/miniapp-sdk";
+
+
 
 import '@rainbow-me/rainbowkit/styles.css';
 

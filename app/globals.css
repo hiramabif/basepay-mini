@@ -10,17 +10,17 @@
   --background: #f9fafb;
   --foreground: #0d111c;
   /* Dark text for light background */
-  --primary: #0052FF;
+  --primary: #0000FF;
   /* Base Blue */
   /* Coinbase Blue Gradient for buttons */
-  --primary-gradient: linear-gradient(135deg, #0052FF 0%, #0B3D91 100%);
+  --primary-gradient: #0000FF;
   --primary-foreground: #ffffff;
   --card: #ffffff;
   --card-foreground: #0d111c;
   --border: #dce0e8;
   --input: #f5f6fc;
   /* Light grey for inputs */
-  --ring: #0052FF;
+  --ring: #0000FF;
 
   /* Glassmorphism / Panels */
   --glass-bg: #ffffff;
@@ -38,8 +38,8 @@
   --background: #0d111c;
   /* Very dark blue/black */
   --foreground: #ffffff;
-  --primary: #0052FF;
-  --primary-gradient: linear-gradient(135deg, #0052FF 0%, #0B3D91 100%);
+  --primary: #0000FF;
+  --primary-gradient: #0000FF;
   --primary-foreground: #ffffff;
   --card: #131a2a;
   /* Darker panel background */
@@ -48,7 +48,7 @@
   /* Dark border */
   --input: #1b2236;
   /* Dark input background */
-  --ring: #0052FF;
+  --ring: #0000FF;
 
   /* Glassmorphism Dark */
   --glass-bg: #131a2a;

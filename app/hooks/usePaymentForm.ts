@@ -5,7 +5,7 @@ import { useAccount, useChainId, useReadContract, useWriteContract, useWaitForTr
 import { readContract, waitForTransactionReceipt } from "@wagmi/core";
 import { parseUnits, erc20Abi, isAddress, maxUint256 } from "viem";
 import { DEFAULT_TOKENS } from "../components/TokenSelector";
-import { chainsToTSender, tsenderAbi } from "../constants";
+import { chainsToTSender, tsenderAbi } from "../utils/constants";
 import { Recipient, Token } from "../interfaces";
 
 

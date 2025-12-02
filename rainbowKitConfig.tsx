@@ -20,7 +20,7 @@ if (!basepayId) {
 const config = getDefaultConfig({
     appName: 'My RainbowKit App',
     projectId: basepayId!,
-    chains: [mainnet, polygon, optimism, arbitrum, base, sepolia],
+    chains: [base, mainnet, polygon, optimism, arbitrum, sepolia],
     ssr: false, // If your dApp uses server side rendering (SSR)
 });
 

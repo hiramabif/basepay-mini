@@ -9,11 +9,11 @@ import { useClickOutside } from "../hooks/useClickOutside"; // HOOK: Custom hook
 // CONSTANT: Hardcoded list of popular tokens to show by default.
 const DEFAULT_TOKENS: Token[] = [
     {
-        symbol: "ETH",
-        name: "Ethereum",
-        address: "ETH",
+        symbol: "WETH",
+        name: "Wrapped Ether",
+        address: "0x4200000000000000000000000000000000000006",
         decimals: 18,
-        logoUrl: "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/info/logo.png"
+        logoUrl: "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2/logo.png"
     },
     {
         symbol: "USDC",

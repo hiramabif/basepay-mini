@@ -10,7 +10,7 @@ import type { Metadata } from "next" // TYPE: For SEO metadata.
 import { Inter } from "next/font/google" // FONT: Optimized Google Font loader.
 import { type ReactNode } from "react"
 import { Providers } from "./providers" // COMPONENT: Wraps app in context providers (Wagmi, RainbowKit).
-import { SDKInitializer } from "./SDKInitialiser"
+import { SDKInitializer } from "./utils/SDKInitialiser"
 
 // FONT CONFIG: Load the Inter font with 'latin' subset.
 // 'variable' allows us to use it as a CSS variable (--font-inter).
@@ -22,20 +22,20 @@ const inter = Inter({
 
 // METADATA: SEO configuration for the app.
 export const metadata: Metadata = {
-  title: "BasePay",
-  description: "Hyper gas-optimized bulk ERC20 token transfer",
+  title: "Pay with Base",
+  description: "Send fast bulk transfers with one click",
   other: {
     "fc:miniapp": JSON.stringify({
       version: "next",
-      imageUrl: "https://basepay-mini.vercel.app/icon.svg", // Placeholder, needs real URL
+      imageUrl: "/assets/Base_basemark_blue.png", // Placeholder, needs real URL
       button: {
         title: "Launch BasePay",
         action: {
-          type: "launch_miniapp",
-          name: "BasePay",
+          type: "Try it",
+          name: "Pay base",
           url: "https://basepay-mini.vercel.app", // Placeholder, needs real URL
-          splashImageUrl: "https://basepay-mini.vercel.app/icon.svg", // Placeholder
-          splashBackgroundColor: "#0052FF",
+          splashImageUrl: "/assets/Base_basemark_blue.png", // Placeholder
+          splashBackgroundColor: "#ffffff",
         },
       },
     }),

@@ -51,7 +51,7 @@ export function PaymentForm() {
             <div className="glass-panel bg-white dark:bg-card p-4 space-y-4 flex-1 flex flex-col">
                 <div className="flex items-center justify-center mb-6 shrink-0">
                     <div className="flex items-center gap-2">
-                        <h2 className="text-2xl font-bold text-foreground">BasePay</h2>
+
                         <img src="/assets/_base-square.svg" alt="Base Square" className="w-8 h-8" />
                     </div>
                 </div>
@@ -127,9 +127,9 @@ export function PaymentForm() {
                                 {({ openConnectModal }: { openConnectModal: () => void }) => (
                                     <button
                                         onClick={openConnectModal}
-                                        className="w-1/2 py-4 rounded-2xl font-bold text-lg bg-[#0052FF] text-white hover:brightness-110 transition-all shadow-lg"
+                                        className="w-1/2 py-4 rounded-2xl font-bold text-lg bg-primary text-white hover:brightness-110 transition-all shadow-lg"
                                     >
-                                        Try BasePay
+                                        Pay with Base
                                     </button>
                                 )}
                             </ConnectButton.Custom>
@@ -141,7 +141,7 @@ export function PaymentForm() {
                                 disabled={isTxLoading || isConfirmed}
                                 className={`w-1/2 py-4 rounded-2xl font-bold text-lg shadow-lg transition-all duration-200 ${isConfirmed
                                     ? "bg-green-500 text-white"
-                                    : "bg-[#0052FF] text-white hover:brightness-110 active:scale-[0.98]"
+                                    : "bg-primary text-white hover:brightness-110 active:scale-[0.98]"
                                     }`}
                             >
                                 {isTxLoading ? "Processing..." : isConfirmed ? "Sent!" : "Pay"}
