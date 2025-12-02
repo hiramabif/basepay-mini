@@ -27,11 +27,11 @@ export async function GET() {
             version: "1",
             name: "Pay with Base",
             homeUrl: appUrl,
-            iconUrl: `${appUrl}/public/assets/Base_basemark_blue.png`,
-            splashImageUrl: `${appUrl}/public/assets/Base_basemark_blue.png`,
+            iconUrl: `${appUrl}/assets/Base_basemark_blue.png`,
+            splashImageUrl: `${appUrl}/assets/Base_basemark_blue.png`,
             splashBackgroundColor: "#ffffff",
             webhookUrl: `${appUrl}/api/webhook`,
-            subtitle: "onChain, Fast, Secure, 0 Fees",
+            subtitle: "onChain,Fast,Secure,0Fees",
             description: "Send bulk transactions in one click.",
             screenshotUrls: [
                 `${appUrl}/screenshot1.png`,
@@ -42,8 +42,8 @@ export async function GET() {
             heroImageUrl: `${appUrl}/hero.png`,
             tagline: "Bulk payments made easy",
             ogTitle: "Pay with Base - Bulk Token Sender",
-            ogDescription: "onChain, Fast, Secure, 0 Fees.",
-            ogImageUrl: `${appUrl}/public/assets/Base_basemark_blue.png`,
+            ogDescription: "onChain,Fast,Secure,0Fees.",
+            ogImageUrl: `${appUrl}/assets/Base_basemark_blue.png`,
             noindex: true, // Note: Strings are safer for clean JSON output
         }),
     };
