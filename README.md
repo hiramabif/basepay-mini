@@ -1,12 +1,14 @@
-# BasePay Mini 🔵
+# Pay with Base MiniApp 🔵
+
+[**https://basepay-mini.vercel.app**](https://basepay-mini.vercel.app)
 
 > The coolest, most efficient way to send crypto on Base. Built for the Superchain.
 
 ## Use Case
-BasePay Mini is designed for **bulk token distribution**. Whether you're a DAO contributor paying out grants, a friend splitting a dinner bill among 10 people, or an airdrop organizer, BasePay Mini lets you send ERC-20 tokens or ETH to multiple recipients in a **single transaction**.
+Pay with Base MiniApp is designed for **bulk token distribution**. Whether you're a DAO contributor paying out grants, a friend splitting a dinner bill among 10 people, or an airdrop organizer, Pay with Base MiniApp lets you send ERC-20 tokens or ETH to multiple recipients in a **single transaction**.
 
 ## Stack
-Built with the bleeding edge of Web3 and frontend tech:
+Built with the bleeding edge of onChain and frontend tech:
 -   **Framework**: [Next.js 16](https://nextjs.org/) (App Router)
 -   **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
 -   **Blockchain Interaction**: [Wagmi v3](https://wagmi.sh/) & [Viem](https://viem.sh/)
