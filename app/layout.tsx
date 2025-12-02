@@ -27,14 +27,14 @@ export const metadata: Metadata = {
   other: {
     "fc:miniapp": JSON.stringify({
       version: "next",
-      imageUrl: "https://basepay-mini.vercel.app/assets/_base-square.svg", // Placeholder, needs real URL
+      imageUrl: "https://basepay-mini.vercel.app/assets/Base_square_blue.png", // Placeholder, needs real URL
       button: {
         title: "Pay with Base",
         action: {
           type: "Try it",
           name: "Pay with base",
           url: "https://basepay-mini.vercel.app", // Placeholder, needs real URL
-          splashImageUrl: "https://basepay-mini.vercel.app/assets/_base-square.svg", // Placeholder
+          splashImageUrl: "https://basepay-mini.vercel.app/assets/Base_square_blue.png", // Placeholder
           splashBackgroundColor: "#ffffff",
         },
       },
