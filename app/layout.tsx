@@ -32,7 +32,7 @@ export const metadata: Metadata = {
         title: "Launch BasePay",
         action: {
           type: "Try it",
-          name: "Pay base",
+          name: "Pay with base",
           url: "https://basepay-mini.vercel.app", // Placeholder, needs real URL
           splashImageUrl: "/assets/Base_basemark_blue.png", // Placeholder
           splashBackgroundColor: "#ffffff",
