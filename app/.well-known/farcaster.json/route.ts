@@ -8,7 +8,7 @@ function withValidProperties(properties: Record<string, undefined | string | str
 }
 
 export async function GET() {
-    const appUrl = process.env.NEXT_PUBLIC_URL || "https://basepay-mini.vercel.app";
+    const appUrl = "https://basepay-mini.vercel.app";
 
     // 2. Define the Manifest
     const manifest = {
@@ -27,23 +27,23 @@ export async function GET() {
             version: "1",
             name: "Pay with Base",
             homeUrl: appUrl,
-            iconUrl: `${appUrl}/assets/Base_basemark_blue.png`,
-            splashImageUrl: `${appUrl}/assets/Base_basemark_blue.png`,
+            iconUrl: `${appUrl}/assets/Base_square_blue.png`,
+            splashImageUrl: `${appUrl}/assets/Base_square_blue.png`,
             splashBackgroundColor: "#ffffff",
             webhookUrl: `${appUrl}/api/webhook`,
             subtitle: "onChain,Fast,Secure,0Fees",
             description: "Send bulk transactions in one click.",
             screenshotUrls: [
-                `${appUrl}/screenshot1.png`,
-                `${appUrl}/screenshot2.png`
+                `${appUrl}/assets/screenshot1.png`,
+                `${appUrl}/assets/screenshot2.png`
             ],
             primaryCategory: "finance",
             tags: ["payments", "defi", "base"],
-            heroImageUrl: `${appUrl}/hero.png`,
+            heroImageUrl: `${appUrl}/assets/Base_square_blue.png`,
             tagline: "Bulk payments made easy",
             ogTitle: "Pay with Base - Bulk Token Sender",
             ogDescription: "onChain,Fast,Secure,0Fees.",
-            ogImageUrl: `${appUrl}/assets/Base_basemark_blue.png`,
+            ogImageUrl: `${appUrl}/assets/Base_square_blue.png`,
             noindex: true, // Note: Strings are safer for clean JSON output
         }),
     };
