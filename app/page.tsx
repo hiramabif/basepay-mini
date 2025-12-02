@@ -2,13 +2,17 @@
 
 import { Header } from "./components/Header"; // COMPONENT: Top navigation bar.
 import { PaymentForm } from "./components/PaymentForm"; // COMPONENT: Main application logic.
-
+import { useEffect } from "react";
+import { sdk } from "@farcaster/miniapp-sdk";
 /**
  * Home Page
  * The main landing page of the application.
  * It assembles the Header and the main PaymentForm.
  */
 export default function Home() {
+  useEffect(() => {
+    sdk.actions.ready(); // Call is guaranteed to run here
+  }, []);
   return (
     // MAIN CONTAINER:
     // - min-h-screen: Full height.
