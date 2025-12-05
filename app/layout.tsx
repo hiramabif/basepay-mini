@@ -26,15 +26,15 @@ export const metadata: Metadata = {
   description: "Send fast bulk transfers with one click",
   other: {
     "fc:miniapp": JSON.stringify({
-      version: "next",
-      imageUrl: "https://basepay-mini.vercel.app/assets/Base_square_blue.png", // Placeholder, needs real URL
+      version: "1",
+      imageUrl: "https://basepay-mini.vercel.app/assets/Base_square_blue.png",
       button: {
         title: "Pay with Base",
         action: {
-          type: "Try it",
+          type: "launch_miniapp",
           name: "Pay with Base",
-          url: "https://basepay-mini.vercel.app", // Placeholder, needs real URL
-          splashImageUrl: "https://basepay-mini.vercel.app/assets/Base_square_blue.png", // Placeholder
+          url: "https://basepay-mini.vercel.app", // real URL
+          splashImageUrl: "https://basepay-mini.vercel.app/assets/Base_square_blue.png",
           splashBackgroundColor: "#ffffff",
         },
       },
