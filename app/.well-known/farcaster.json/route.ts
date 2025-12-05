@@ -44,7 +44,7 @@ export async function GET() {
             ogTitle: "Pay with Base - Bulk Token Sender",
             ogDescription: "onChain,Fast,Secure,0Fees.",
             ogImageUrl: `${appUrl}/assets/Base_square_blue.png`,
-            noindex: true, // Note: Strings are safer for clean JSON output
+            noindex: false, // Note: Strings are safer for clean JSON output
         }),
     };
 
