@@ -25,7 +25,7 @@ export async function GET() {
         }),
         miniapp: withValidProperties({
             version: "1",
-            name: "PaywithBase",
+            name: "Pay with Base",
             homeUrl: appUrl,
             iconUrl: `${appUrl}/assets/Base_square_blue.png`,
             splashImageUrl: `${appUrl}/assets/Base_square_blue.png`,
