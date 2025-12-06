@@ -24,7 +24,7 @@ export async function GET() {
                     "https://basepay-mini.vercel.app/assets/Base_square_blue.png",
                 ],
                 primaryCategory: "finance",
-                tags: ["defi", "payment", "finance", "social", "miniapp", "baseapp"],
+                tags: ["defi", "payment", "finance", "social", "miniapp"],
                 heroImageUrl: "https://basepay-mini.vercel.app/assets/Base_square_blue.png",
                 tagline: "Pay instantly",
                 ogTitle: "Pay with Base",
