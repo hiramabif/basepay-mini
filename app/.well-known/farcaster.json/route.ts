@@ -19,7 +19,7 @@ export async function GET() {
                 splashBackgroundColor: "#ffffff",
                 webhookUrl: "https://basepay-mini.vercel.app/api/webhook",
                 subtitle: "Fast, free, secure",
-                description: "A fast, fun way to challenge friends in real time.",
+                description: "A fast, fun way to pay friends in real time.",
                 screenshotUrls: [
                     "https://basepay-mini.vercel.app/assets/Base_square_blue.png",
                 ],
