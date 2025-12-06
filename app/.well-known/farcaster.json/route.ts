@@ -1,3 +1,5 @@
+import { NextResponse } from "next/server";
+
 function withValidProperties(properties: Record<string, undefined | string | string[]>) {
     return Object.fromEntries(
         Object.entries(properties).filter(([_, value]) => (Array.isArray(value) ? value.length > 0 : !!value))
@@ -6,7 +8,7 @@ function withValidProperties(properties: Record<string, undefined | string | str
 
 export async function GET() {
     const URL = process.env.NEXT_PUBLIC_URL || "https://basepay-mini.vercel.app";
-    return Response.json(
+    return NextResponse.json(
         {
             miniapp: {
                 version: "1",

@@ -10,6 +10,7 @@ import type { Metadata } from "next" // TYPE: For SEO metadata.
 import { Inter } from "next/font/google" // FONT: Optimized Google Font loader.
 import { type ReactNode } from "react"
 import { Providers } from "./providers" // COMPONENT: Wraps app in context providers (Wagmi, RainbowKit).
+import SDKInitialiser from "./components/sdkInitialiser";
 
 
 // FONT CONFIG: Load the Inter font with 'latin' subset.
@@ -72,6 +73,7 @@ export default function RootLayout(props: { children: ReactNode }) {
         */}
 
         <Providers>
+          <SDKInitialiser />
           {props.children}
         </Providers>
       </body>
