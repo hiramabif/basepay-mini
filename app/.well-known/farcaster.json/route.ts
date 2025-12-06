@@ -10,6 +10,11 @@ export async function GET() {
     const URL = process.env.NEXT_PUBLIC_URL || "https://basepay-mini.vercel.app";
     return NextResponse.json(
         {
+            "accountAssociation": {
+                "header": "eyJmaWQiOjE1MzYyNzUsInR5cGUiOiJjdXN0b2R5Iiwia2V5IjoiMHgyYzdFQzAxOUVEOTk1OTFENGY2QTkwOUIyRmJENTM2RTIyOTUyQzJCIn0",
+                "payload": "eyJkb21haW4iOiJiYXNlcGF5LW1pbmkudmVyY2VsLmFwcCJ9",
+                "signature": "QLAlbMhXYHsXYODKzRFdyzzeSr6rc5XuZkvKejEi86UoM1JPc2NZgx+B3y0ST+mTbq8PysNto2OAVHiGWrtqSRw="
+            },
             miniapp: {
                 version: "1",
                 name: "Pay with Base",
