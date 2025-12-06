@@ -72,8 +72,8 @@ export default function RootLayout(props: { children: ReactNode }) {
           wallet connection and blockchain interactions throughout the app.
         */}
 
+        <SDKInitialiser />
         <Providers>
-          <SDKInitialiser />
           {props.children}
         </Providers>
       </body>
